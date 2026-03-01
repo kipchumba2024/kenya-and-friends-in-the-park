@@ -22,3 +22,16 @@ export type PageData = {
     text: string
   }>
 }
+
+export type EventDetailData = {
+  title: string
+  subtitle: string
+  category: string
+  age: string
+  hero?: string
+  sourceUrl: string
+  sections: Array<{
+    heading: string
+    text: string
+  }>
+}

@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
+import { eventDetails } from '../components/eventDetails'
 import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
-import { menuItems } from '../components/siteData'
+import { menuItems, pageContent } from '../components/siteData'
 import { ContactPage } from '../pages/ContactPage'
+import { EventDetailPage } from '../pages/EventDetailPage'
 import { EventsPage } from '../pages/EventsPage'
 import { HomePage } from '../pages/HomePage'
 import { InnerPage } from '../pages/InnerPage'
@@ -35,6 +37,8 @@ export function Layout() {
     () => [
       ...menuItems.map((item) => item.path),
       ...menuItems.flatMap((item) => item.children?.map((child) => child.path) ?? []),
+      ...Object.keys(pageContent),
+      ...Object.keys(eventDetails),
     ],
     [],
   )
@@ -89,6 +93,10 @@ export function Layout() {
       case '/events':
         return <EventsPage />
       default:
+        if (eventDetails[currentPath]) {
+          return <EventDetailPage currentPath={currentPath} />
+        }
+
         return <InnerPage currentPath={currentPath} />
     }
   }

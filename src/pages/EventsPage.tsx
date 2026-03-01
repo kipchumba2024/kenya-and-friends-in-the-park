@@ -1,7 +1,7 @@
 import {
+  FaArrowRight,
   FaCalendarAlt,
   FaTag,
-  FaExternalLinkAlt,
   FaClock,
   FaFire,
 } from "react-icons/fa"
@@ -32,21 +32,21 @@ const calendarEvents: CalendarEvent[] = [
 const eventPosts: EventPost[] = [
   {
     title: 'Sponsors and supporters 2024',
-    href: 'https://kenyainthepark.com/?p=3748',
+    href: '/events/sponsors-and-supporters-2024',
     category: 'Business',
     age: '2 years ago',
     excerpt: '[Best_Wordpress_Gallery id="5" gal_title="sponsors2024"]',
   },
   {
     title: 'Performing artists 2023',
-    href: 'https://kenyainthepark.com/?p=3762',
+    href: '/events/performing-artists-2023',
     category: 'Entertainment',
     age: '3 years ago',
     excerpt: '[Best_Wordpress_Gallery id="4" gal_title="Artists performing 2023"]',
   },
   {
     title: 'What to wear in London?',
-    href: 'https://kenyainthepark.com/?p=3743',
+    href: '/events/what-to-wear-in-london',
     category: 'Events',
     age: '3 years ago',
     image: '/images/memory-lane19.jpg',
@@ -55,14 +55,14 @@ const eventPosts: EventPost[] = [
   },
   {
     title: 'Sponsors and supporters 2023',
-    href: 'https://kenyainthepark.com/?p=3668',
+    href: '/events/sponsors-and-supporters-2023',
     category: 'Business',
     age: '3 years ago',
     excerpt: '[Best_Wordpress_Gallery id="2" gal_title="sponsors2023"]',
   },
   {
     title: '2022',
-    href: 'https://kenyainthepark.com/?p=3213',
+    href: '/events/kenya-in-the-park-2022',
     category: 'Events',
     age: '4 years ago',
     image: '/images/flyer-2022.jpg',
@@ -71,7 +71,7 @@ const eventPosts: EventPost[] = [
   },
   {
     title: 'Them Mushrooms',
-    href: 'https://kenyainthepark.com/?p=3123',
+    href: '/events/them-mushrooms',
     category: 'Events',
     age: '4 years ago',
     image: '/images/flyer2-2022.jpg',
@@ -80,7 +80,7 @@ const eventPosts: EventPost[] = [
   },
   {
     title: 'Kenya in the park 2018',
-    href: 'https://kenyainthepark.com/?p=2654',
+    href: '/events/kenya-in-the-park-2018',
     category: 'Events',
     age: '6 years ago',
     excerpt:
@@ -88,7 +88,7 @@ const eventPosts: EventPost[] = [
   },
   {
     title: 'Kenya in The Park 2016',
-    href: 'https://kenyainthepark.com/?p=2652',
+    href: '/events/kenya-in-the-park-2016',
     category: 'Events',
     age: '6 years ago',
     excerpt:
@@ -129,7 +129,7 @@ export function EventsPage() {
                 {/* IMAGE */}
                 {post.image && (
                   <div className="relative overflow-hidden">
-                    <a href={post.href} target="_blank" rel="noreferrer">
+                    <a href={post.href}>
                       <img
                         src={post.image}
                         alt={post.title}
@@ -156,12 +156,10 @@ export function EventsPage() {
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-600 transition">
                     <a
                       href={post.href}
-                      target="_blank"
-                      rel="noreferrer"
                       className="flex items-center gap-2"
                     >
                       {post.title}
-                      <FaExternalLinkAlt className="text-sm opacity-70" />
+                      <FaArrowRight className="text-sm opacity-70" />
                     </a>
                   </h3>
 

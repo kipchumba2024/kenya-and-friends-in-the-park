@@ -62,15 +62,15 @@ export function TravelPage() {
             <div className="space-y-8">
               {/* HOTELS */}
               <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-md border border-slate-200 dark:border-slate-800">
-                <div className="flex justify-between items-center">
-                    <h3 className="font-semibold text-lg mb-6 dark:text-white">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <h3 className="text-lg font-semibold dark:text-white">
                       Local Hotels
                     </h3>
                     <a
                       href="https://www.airbnb.co.uk/rooms/786205359610603733"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-red-600 font-medium hover:underline"
+                      className="inline-flex w-full items-center gap-2 text-red-600 font-medium hover:underline sm:w-auto"
                     >
                       View Airbnb in Greater London
                       <FaExternalLinkAlt className="text-xs" />
