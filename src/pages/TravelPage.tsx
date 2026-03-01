@@ -25,7 +25,6 @@ import {
   FaMapMarkedAlt,
   FaBus,
   FaWalking,
-  FaHotel,
   FaExternalLinkAlt,
   FaFacebookF,
   FaBookOpen,

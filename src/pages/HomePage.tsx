@@ -76,9 +76,9 @@ const homeStats = [
     icon: <FaMapMarkerAlt />,
   },
   {
-    label: 'Partners',
-    value: 'Sponsors',
-    note: 'brands and supporters featured',
+    label: 'MULEMBE EXTRAVAGANZA',
+    value: 'Events ',
+    note: 'Happening on July 11, 2026',
     icon: <FaHandshake />,
   },
 ]

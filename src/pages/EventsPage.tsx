@@ -15,6 +15,20 @@ type EventPost = {
   image?: string
 }
 
+type CalendarEvent = {
+  title: string
+  location: string
+  date: string
+}
+
+const calendarEvents: CalendarEvent[] = [
+  {
+    title: 'MULEMBE EXTRAVAGANZA',
+    location: '',
+    date: 'July 11, 2026',
+  },
+]
+
 const eventPosts: EventPost[] = [
   {
     title: 'Sponsors and supporters 2024',
@@ -162,6 +176,31 @@ export function EventsPage() {
 
           {/* SIDEBAR */}
           <aside className="space-y-8">
+
+            <div className="bg-white dark:bg-slate-900 rounded-3xl p-5 shadow-md border border-slate-200 dark:border-slate-800">
+              <h4 className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-500 text-white px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-4">
+                <FaCalendarAlt /> Events Calendar
+              </h4>
+
+              <div className="space-y-4">
+                {calendarEvents.map((event) => (
+                  <div
+                    key={`${event.title}-${event.date}`}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/60"
+                  >
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-600 dark:text-slate-300">
+                      {event.date}
+                    </p>
+                    <h5 className="mt-2 text-lg font-bold text-slate-900 dark:text-white">
+                      {event.title}
+                    </h5>
+                    <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                      {event.location}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* LIVE EVENTS */}
             <SidebarCard
